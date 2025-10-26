@@ -1163,3 +1163,42 @@ a {
   color: var(--color-main);
   font-weight: 1.4rem;
 }
+/*==============================
+=> Mobile Browse Topics Fix
+================================*/
+@media screen and (max-width: 900px) {
+  .layout__box {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    overflow: auto !important;
+    margin: 3rem auto !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .topics__list li a {
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+  }
+
+  .header__search {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .topics-page .btn--link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-weight: 500 !important;
+    margin-top: 1rem !important;
+  }
+
+  .topics-page .btn--link svg {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    fill: var(--color-main) !important;
+  }
+}
