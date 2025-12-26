@@ -5,5 +5,10 @@
       "use": "@vercel/python"
     }
   ],
-  "buildCommand": "bash build.sh"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "studybuddy/wsgi.py"
+    }
+  ]
 }
