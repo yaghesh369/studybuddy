@@ -1,10 +1,6 @@
 import os
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "studybuddy.settings")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studybuddy.settings')
 
-application = get_wsgi_application()
-
-# 🔥 REQUIRED FOR VERCEL
-app = application
-handler = application
+application = get_wsgi_application()  # must be named 'application'
