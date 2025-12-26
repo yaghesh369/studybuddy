@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get(
 )
 
 # Use environment variable for DEBUG, default True for local dev
-DEBUG = os.environ.get("DEBUG", "False") == "True"
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 # Use environment variable for allowed hosts, default to localhost
 ALLOWED_HOSTS = [
