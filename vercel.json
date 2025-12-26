@@ -1,14 +1,13 @@
 {
   "builds": [
     {
-      "src": "studybuddy/asgi.py",
-      "use": "@vercel/python"
+      "src": "manage.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "studybuddy/asgi.py"
-    }
+    { "src": "/static/(.*)", "dest": "/staticfiles/$1" },
+    { "src": "/(.*)", "dest": "/studybuddy/wsgi.py" }
   ]
 }
