@@ -1,21 +1,19 @@
 {
   "builds": [
     {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.12"
-      }
+      "src": "studybuddy/wsgi.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/staticfiles/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "api/index.py"
+      "dest": "studybuddy/wsgi.py"
     }
-  ]
+  ],
+  "buildCommand": "bash build.sh"
 }
