@@ -155,11 +155,11 @@ def updateuser(request):
             return redirect('user-profile',pk=user.id)
 
     return render(request ,'base/update-user.html',{'form':form})
-def topicspage(request):
-    q = request.GET.get("q") if request.GET.get("q") != None else ""
-    topics=Topic.objects.filter(name__icontains=q)
-    return render(request,'base/topics.html',{'topics': topics})
 
+def topicspage(request):
+    q = request.GET.get("q", "")  # safer way to get 'q', defaults to empty string
+    topics = Topic.objects.filter(name__icontains=q)
+    return render(request,'base/topics.html',{'topics': topics})
 
 def activitypage(request):
     room_messages = Message.objects.all()
