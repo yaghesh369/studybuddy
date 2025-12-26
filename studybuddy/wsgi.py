@@ -3,5 +3,4 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'studybuddy.settings')
 
-app = get_wsgi_application()        # 👈 REQUIRED BY VERCEL
-handler = app                      # 👈 REQUIRED BY VERCEL
+application = get_wsgi_application()

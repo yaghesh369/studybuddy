@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "studybuddy/wsgi.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "studybuddy/wsgi.py"
+      "dest": "api/index.py"
     }
   ]
 }
