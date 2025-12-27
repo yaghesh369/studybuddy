@@ -23,6 +23,9 @@ ALLOWED_HOSTS = [
     "localhost",
     ".onrender.com",
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.onrender.com",
+]
 
 # -------------------------------
 # Application definition
@@ -83,11 +86,12 @@ WSGI_APPLICATION = 'studybuddy.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        default=os.environ.get("DATABASE_URL"),
         conn_max_age=600,
-        ssl_require=False,
+        ssl_require=True,
     )
 }
+
 
 
 
@@ -113,9 +117,11 @@ USE_TZ = True
 # Static and media files
 # -------------------------------
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+STATICFILES_DIRS = []
+
+if os.path.exists(BASE_DIR / "static"):
+    STATICFILES_DIRS.append(BASE_DIR / "static")
+
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
