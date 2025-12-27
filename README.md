@@ -1,3 +1,1 @@
-git add .
-git commit -m "Updated feature XYZ"
-git push
+:)    https://studybuddy-xoyy.onrender.com/ successfully deployed on render and database with neon 
